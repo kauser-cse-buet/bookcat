@@ -9,4 +9,7 @@ class StaticPagesController < ApplicationController
   def mars
   end
 
+  def earth
+  end
+
 end

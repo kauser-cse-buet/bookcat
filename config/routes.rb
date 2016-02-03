@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-
+  get 'earth', to: 'static_pages#earth', as: 'earth'
   get 'about', to: 'static_pages#about', as: 'about'
   get 'home', to: 'static_pages#home', as: 'home'
   get 'mars', to: 'static_pages#mars', as: 'mars'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
