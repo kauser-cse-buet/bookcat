@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :authors
   get 'earth', to: 'static_pages#earth', as: 'earth'
   get 'about', to: 'static_pages#about', as: 'about'
   get 'home', to: 'static_pages#home', as: 'home'
