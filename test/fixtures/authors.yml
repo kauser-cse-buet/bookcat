@@ -12,12 +12,12 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  first_name: MyString
-  last_name: MyString
-  year_born: 1
+ayn:
+  first_name: Ayn
+  last_name: Rand
+  year_born: 1905
 
-two:
-  first_name: MyString
-  last_name: MyString
-  year_born: 1
+peter:
+  first_name: Peter
+  last_name: Benchley
+  year_born: 1940
