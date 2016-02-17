@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
 
   resources :authors
+  get '/authors/:id/display', to: 'authors#display', as: 'display_author'
+  patch '/authors/:id/display', to: 'authors#modify'
+  put '/authors/:id/display', to: 'authors#modify'
+
   get 'earth', to: 'static_pages#earth', as: 'earth'
   get 'about', to: 'static_pages#about', as: 'about'
   get 'home', to: 'static_pages#home', as: 'home'

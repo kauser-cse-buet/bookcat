@@ -11,17 +11,20 @@
 #
 
 class AuthorsController < ApplicationController
-  before_action :set_author, only: [:show, :edit, :update, :destroy]
+  before_action :set_author, only: [:show, :edit, :update, :destroy, :display, :modify]
 
   # GET /authors
   # GET /authors.json
   def index
     @authors = Author.all
+    # render 'authors/index'
   end
 
   # GET /authors/1
   # GET /authors/1.json
   def show
+    # Lookup the author with :id
+    # render show.html.erb
   end
 
   # GET /authors/new
@@ -70,6 +73,17 @@ class AuthorsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to authors_url, notice: 'Author was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def display
+  end
+
+  def modify
+    if @author.update(author_params)
+      redirect_to display_author_url(@author), notice: 'Author was successfully updated.'
+    else
+      render :display
     end
   end
 
