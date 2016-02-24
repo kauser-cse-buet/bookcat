@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :books
+  resources :author_profiles
   get '/authors/:id/display', to: 'authors#display', as: 'display_author'
   patch '/authors/:id/display', to: 'authors#modify'
   put '/authors/:id/display', to: 'authors#modify'

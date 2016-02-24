@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Birthplace:</strong>
+  <%= @author_profile.birthplace %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @author_profile.bio %>
+</p>
+
+<p>
+  <strong>Awards:</strong>
+  <%= @author_profile.awards %>
+</p>
+
+<%= link_to 'Edit', edit_author_profile_path(@author_profile) %> |
+<%= link_to 'Back', author_profiles_path %>
