@@ -16,7 +16,7 @@ class Author < ActiveRecord::Base
   validates :year_born, numericality: { greater_than_or_equal_to: 1900 }
 
   has_one :author_profile
-  has_many :books
+  has_many :books, class_name: "Book", foreign_key: "creator_id"
 
   def full_name
     "#{first_name} #{last_name}"

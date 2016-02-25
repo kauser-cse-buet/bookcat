@@ -24,8 +24,8 @@
     <%= f.text_area :summary %>
   </div>
   <div class="field">
-    <%= f.label :author_id %>
-    <%= f.collection_select(:author_id, Author.all, :id, :full_name) %>
+    <%= f.label :creator_id %>
+    <%= f.collection_select(:creator_id, Author.all, :id, :full_name) %>
   </div>
 
   <div class="actions">

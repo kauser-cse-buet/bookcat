@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160224190809) do
+ActiveRecord::Schema.define(version: 20160224195149) do
 
   create_table "author_profiles", force: :cascade do |t|
     t.string   "birthplace"
@@ -38,9 +38,9 @@ ActiveRecord::Schema.define(version: 20160224190809) do
     t.text     "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "author_id"
+    t.integer  "creator_id"
   end
 
-  add_index "books", ["author_id"], name: "index_books_on_author_id"
+  add_index "books", ["creator_id"], name: "index_books_on_creator_id"
 
 end
