@@ -8,10 +8,11 @@
 #  summary    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  author_id  :integer
+#  creator_id :integer
 #
 
 class BooksController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books

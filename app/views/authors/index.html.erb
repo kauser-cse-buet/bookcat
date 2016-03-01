@@ -18,10 +18,18 @@
         <td><%= author.first_name %></td>
         <td><%= author.last_name %></td>
         <td><%= author.year_born %></td>
-        <td><%= link_to 'Show', author %></td>
-        <td><%= link_to 'Edit', edit_author_path(author) %></td>
-        <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Display', display_author_path(author) %></td>
+
+        <% if current_user && current_user.authors.include?(author) %>
+          <td><%= link_to 'Show', author %></td>
+          <td><%= link_to 'Edit', edit_author_path(author) %></td>
+          <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Display', display_author_path(author) %></td>
+        <else>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -29,4 +37,6 @@
 
 <br>
 
-<%= link_to 'New Author', new_author_path %>
+<% if signed_in? %>
+  <%= link_to 'New Author', new_author_path %>
+<% end %>

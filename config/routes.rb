@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  
   resources :books
   resources :author_profiles
   get '/authors/:id/display', to: 'authors#display', as: 'display_author'
@@ -11,6 +13,8 @@ Rails.application.routes.draw do
   get 'about', to: 'static_pages#about', as: 'about'
   get 'home', to: 'static_pages#home', as: 'home'
   get 'mars', to: 'static_pages#mars', as: 'mars'
+
+  root to: "static_pages#home"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

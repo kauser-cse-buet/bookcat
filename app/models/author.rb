@@ -17,6 +17,7 @@ class Author < ActiveRecord::Base
 
   has_one :author_profile
   has_many :books, class_name: "Book", foreign_key: "creator_id"
+  belongs_to :user
 
   def full_name
     "#{first_name} #{last_name}"
